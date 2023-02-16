@@ -19,6 +19,14 @@
     "rootDir": "src",                                  /* Specify the root folder within your source files. */
    
     /* 밑에  변환된 자바스크립트파일 담음 */
-    "outDir": "dist"                                   /* Specify an output folder for all emitted files. */   
+    "outDir": "dist" ,                                  /* Specify an output folder for all emitted files. */   
+    /* 암묵적으로 any타입을 가지는것을 허락하지 않음
+    "noImplicitAny": true,
+    엄격한 null타입 체크
+    "strictNullChecks": true,   이 두개의 코드는 밑에 strict과 같음*/
+    /* 코드 엄격한 체크 (number타입 등에 null이나 undefiend를 넣으면 에러 발생시킴/없을 경우 허용됨)*/
+    "strict": true,
+    //컴파일시 주석 제거하기 지정
+    "removeComments": true
   } 
 }
