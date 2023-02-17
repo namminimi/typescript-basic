@@ -79,3 +79,26 @@ function printUserName2(this:User2, age:number){
 const myFun2 = printUserName2.bind(yellow);
 //전달된 값 30은 this다음 매개변수에 전달됨
 myFun2(30);
+
+
+//함수 오버로드 ----- 리턴해야할 타입이 다른 타입이 있어야 할때
+interface Person200 {
+    name: string;
+    age: number;
+}
+
+function join(name: string, age: string): string;
+function join(name: string, age: number): Person200 ;  
+function join(name:string, age: string | number) : string | Person200 {
+    if(typeof age === "number") {
+        return {
+            name: name,
+            age: age
+        }
+    } else {
+        return "나이는 숫자로 입력하세요";
+    }
+}
+
+const green2: Person200 = join("green", 30);
+const blue: string = join("blue", "hi")

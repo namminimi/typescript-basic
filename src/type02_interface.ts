@@ -92,3 +92,39 @@ class Student2 implements IStudent{
 
 const green = new Student2("green")
 console.log(green.getName());
+
+//인터페이스 확장
+//인터페이스도 class 처럼 extends 키워드를 활용해 상속 할 수 있음
+interface IAnimal {
+    name: string;
+}
+interface ICat extends IAnimal {
+    sound() : string;
+}
+
+class Cat implements ICat {
+    name: string;
+    constructor(name: string){
+        this.name = name;
+    }
+    sound(): string {
+        return "야옹";
+    }
+}
+
+//같은 이름의 interface를 여러개 만들 수 있음.
+//기존에 만들어진 interface에 내용을 추가할 때 유용함.
+interface IName {
+    name: string;
+    age: number;
+}
+
+interface IName {
+    color: string;
+}
+const iname: IName = {
+    name: "a",
+    age: 12,
+    color: "Aa"
+}
+
